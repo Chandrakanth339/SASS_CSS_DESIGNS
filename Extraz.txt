@@ -1,0 +1,22 @@
+// Defines the Author of this file
+@author Chandrakanth;
+
+// Reference Variable using "$"  -- can be reused as mixin argument, or value assigned to a key in module
+$var1: green;
+$var2: 40px;
+
+.bong{
+  var1:$var1;
+  var2:$var2;
+}
+
+///// MIXIN WITH ARGUMENT -- common variable can be passed as an argument to mixin
+@mixin argf($background){
+  color: $background;
+}
+
+$bckgnd: blue,orange,yellow;
+
+.mxnRefMdle{
+  @include argf($bckgnd);
+}
