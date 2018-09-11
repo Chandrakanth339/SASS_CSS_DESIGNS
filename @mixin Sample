@@ -1,0 +1,49 @@
+------------------------------------------------------------------ SASS ----------------------------------------------------------------
+
+// MIXINS
+
+
+// @mixin -- reusable component which can be useful 
+// to reuse anywhere within this file
+@mixin mxn(){
+  border: 2px solid green;
+  color: yellow;
+  background-color: brown;
+}
+
+// @include annotation will let you to "include" the design 
+// properties defined in component marked with @mixin (MIXIN)
+.modal-bg{
+  @include mxn();
+  background-color: blue;
+}
+
+%plc
+{
+  background-color: yellow;
+}
+
+.bing{
+  @extend %plc;
+  background-color: orange;
+}
+
+-------------------------------------------------------GENERATED CSS ----------------------------------------------------------------
+
+.modal-bg {
+  border: 2px solid green;
+  color: yellow;
+  background-color: brown;
+  background-color: blue;
+}
+
+.bing {
+  background-color: yellow;
+}
+
+.bing {
+  background-color: orange;
+}
+
+
+
