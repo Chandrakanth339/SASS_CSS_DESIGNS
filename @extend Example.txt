@@ -1,1 +1,54 @@
+-------------------------------------------------- SASS--------------------------------------------------------------
 
+// NESTING OF EVENTS(click, dbclick, hover...) WITH IN AN ID/CLASS ELEMENT
+#ho{
+    margin-left: 40px;  
+  &:click{
+        background: 2px solid green;
+  };
+};
+
+// THE BELOW ELEMENT IS USED AS NORMAL STYLE SELECTOR BEARING ID .bg0
+.bg0{
+  color: green;
+  background-color:yellow;
+  position: absolute;
+}
+%bg1{
+  color: green;
+  background-color:yellow;
+  position: absolute;
+}
+
+.bg2{
+  // SASS placeholder % will enable to use common design module
+  // to .bg2 but, the module declared with % will not actually 
+  // be in HTML -- it is a just a common place to declare design properties
+  @extend %bg1;
+}
+
+.bg3{
+  // THE BELOW ELEMENT IS USED WITH @extend keyword to apply same 
+  // design rules to .bg3 as in .bg0
+  @extend .bg0;
+}
+--------------------------------------------------GENERATED CSS--------------------------------------------------------------
+
+#ho {
+  margin-left: 40px;
+}
+#ho:click {
+  background: 2px solid green;
+}
+
+.bg0, .bg3 {
+  color: green;
+  background-color: yellow;
+  position: absolute;
+}
+
+.bg2 {
+  color: green;
+  background-color: yellow;
+  position: absolute;
+}
